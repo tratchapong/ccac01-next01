@@ -5,13 +5,14 @@ async function getProduct() {
 
 export default async function Page() {
   const product = (await getProduct()).products;
-  console.log(product[2]);
   return (
     <>
       <div>Product page SSR</div>
       <hr />
       {product.map( el => (
-        <p>{el.id}, {el.title} : ${el.price}</p>
+        <p key={el.id}> 
+          {el.id}, {el.title} : ${el.price}
+        </p>
       ))}
     </>
   );

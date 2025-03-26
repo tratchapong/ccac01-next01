@@ -23,7 +23,7 @@ export default function Page() {
       <div>Product page CSR</div>
       <hr />
       {product.map((el) => (
-        <p>
+        <p key={el.id}>
           {el.id}, {el.title} : ${el.price}
         </p>
       ))}
